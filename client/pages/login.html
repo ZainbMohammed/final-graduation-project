@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مساعد</title>
+      <!-- Google Fonts -->
+  <link
+  href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&family=Roboto:ital,wght@0,100;0,400;1,300&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+  rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/registerStyle.css" rel="stylesheet">
+</head>
+<body>
+    <!-- =======header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="../assets/img/logo.png" alt="logo">
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#main">الرئيسية</a></li>
+          <li><a class="nav-link scrollto" href="./index.html/#services">خدماتنا</a></li>
+          <li><a class="nav-link scrollto" href="#using-way">طريقة الاستخدام</a></li>
+          <li><a class="nav-link scrollto" href="#pricing">الأسعار</a></li>
+          <li><a class="nav-link scrollto" href="#">الأسئلة الشائعة</a></li>
+          <li><a class="nav-link scrollto" href="#team">من نحن</a></li>
+          <li><a class="nav-link scrollto" href="#contact">تواصل معنا</a></li>
+          <li><a class="getstarted scrollto" href="#">جرب الآن</a></li>
+          <li><a class="nav-link scrollto" href="#">تسجيل الدخول</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    
+    </div>
+  </header><!-- End Header -->
+
+  <!-- Login section -->
+  <section >
+    <div class="wrapper">
+        <div class="container main">
+            <div class="row">
+                <div class="col-md-6 right-side">
+                    <div class="input-box">
+                       <h3> مرحبا بعودتك سجل الآن و استمتع بالتجربة</h3>
+                       <form id="loginForm" action="/login" method="POST">
+                        <div class="input-field">
+                          <label for="email" class="form-label">ايميل</label>
+                          <input type="text" id="email" class="form-control">
+                        </div> 
+                        <div class="input-field">
+                            <label for="password" class="form-label">كلمةالسر</label>
+                            <input type="password" id="password" class="form-control" aria-describedby="passwordHelpBlock">
+                        </div>  
+                       <input type="submit" value="تسجيل الدخول" class="btn">
+                      </form>
+                       <div class="signin text-center">
+                        <span>لا تملك حساب ؟<a href="./register.html">انشاء حساب</a></span>
+                       </div>
+                    </div>  
+                </div>
+                <div class="col-md-6 image-side">      
+                    <!-------------      image     ------------->
+                    <img  src="../assets/img/register/register.png" alt="">   
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  <!-- End Login section -->
+
+  <!-- Template Main JS File -->
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async function (event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        // Get input field values
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Construct data object
+        const data = {
+            email: email,
+            password: password
+        };
+
+        try {
+            // Make POST request to API endpoint
+            const response = await fetch('http://localhost:3000/api/users/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const responseData = await response.json();
+
+            // Check response status
+            if (response.ok) {
+                // Login successful, handle accordingly (e.g., redirect to dashboard)
+                console.log('Login successful:', responseData);
+                const {token ,id} = responseData.data;
+                console.log('token => ',token);
+                console.log('id => ',id);
+                localStorage.setItem('authToken', token);
+                localStorage.setItem('userId', id);
+                window.location.href = `http://127.0.0.1:5500/client/pages/profile.html?userId=${id}`;
+            } else {
+                // Login failed, handle error (e.g., display error message)
+                console.log('Login failed:', responseData);
+                alert('Login failed!' + responseData['Message']); // Example: Show alert message
+
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            // Handle network errors or other issues
+        }
+    });
+</script>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
