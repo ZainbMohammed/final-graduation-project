@@ -976,7 +976,7 @@
       cursor: pointer;
       text-decoration: underline;
       text-decoration-style: dotted;
-      text-decoration-color: #4058FF;
+      text-decoration-color: #219653;
       background: rgb(64, 88, 255, 0.1);
     }
 
@@ -986,7 +986,7 @@
       cursor: pointer;
       text-decoration: underline;
       text-decoration-style: dotted;
-      text-decoration-color: #4058FF;
+      text-decoration-color: #219653;
       background: rgb(64, 88, 255, 0.2);
     }
 
@@ -1017,11 +1017,11 @@
 
     @keyframes L-coreBorderAnimation {
       0% {
-        border-bottom-color: rgba(64, 158, 255, 0.5)
+        border-bottom-color: #219653
       }
 
       100% {
-        border-bottom-color: rgba(64, 158, 255, 1)
+        border-bottom-color: #219653
       }
     }
 
@@ -1386,7 +1386,7 @@
       top: 105px;
       padding: 4px;
       border-radius: 3px;
-      background-color: #323639;
+      background-color: #219653;
       font-size: 10px;
       font-weight: normal;
       font-stretch: normal;
@@ -1433,12 +1433,12 @@
     .liner-picked-search-result-bar {
       position: absolute !important;
       left: -20px !important;
-      background-color: #798AFF;
+      background-color: #219653;
       width: 4px;
     }
 
     .L-AIAnswer {
-      background-color: #4058FF !important;
+      background-color: #219653 !important;
     }
 
     .L-AIAnswerWrapper {
@@ -1456,7 +1456,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #4058FF;
+      background-color: #219653;
       font-style: normal;
       font-weight: 700;
       font-size: 11px;
@@ -2216,7 +2216,7 @@
                   id="pills-tab">
                   <li class="nav-item me-0">
                     <label for="type_text_media"
-                      class="nav-link الرد text-gray-700 px-4 py-3 b-r-6 text-active-white active"
+                      class="nav-link الرد text-gray-700  b-r-6 text-active-white active"
                       data-bs-toggle="pill" data-bs-target="#wa_text_and_media" type="button" role="tab" style="background-color: #219653;">النص
                       والوسائط
                     </label>
@@ -2312,40 +2312,41 @@
                         File_manager.loadSelectedFiles([""]);
                       });
                     </script>
+                    <br><br>
                     <label class="form-label">التسمية التوضيحية</label>
                     <div class=" mb-3 wrap-input-emoji">
                       <textarea class="form-control input-emoji fw-4" name="caption" placeholder="اكتب شرحا"></textarea>
                       <ul class="caption-option d-flex overflow-x-auto">
-                        <li
+                        <!-- <li
                           class="count-word px-3 py-2 d-block d-flex align-items-center justify-content-center text-gray-700">
-                          <i class="bi bi-text-paragraph icon-large"></i><span class="p-l-5"></span></li>
-                        <li class="bi bi-card-text icon-large">
+                          <i class="bi bi-text-paragraph icon-large"></i><span class="p-l-5"></span></li> -->
+                        <!-- <li class="bi bi-card-text icon-large">
                           <a href="javascript:void(0);"
                             class="btnGetCaption px-3 py-2 d-block btn btn-active-light text-gray-700" title=""
                             data-toggle="tooltip" data-placement="top"
                             data-bs-original-title="الحصول على التسمية التوضيحية"
                             aria-label="الحصول على التسمية التوضيحية"><i class="fal fa-comment-alt-lines p-0"></i></a>
-                        </li>
-                        <li class="bi bi-save">
+                        </li> -->
+                        <!-- <li class="bi bi-save">
                           <a href="javascript:void(0);"
                             class="btnSaveCaption px-3 py-2 d-block btn btn-active-light text-gray-700"
                             title="حفظ التسمية التوضيحية" data-toggle="tooltip" data-placement="top"><i
                               class="fal fa-save p-0"></i></a>
-                        </li>
-                        <li class="bi bi-shuffle">
+                        </li> -->
+                        <!-- <li class="bi bi-shuffle">
                           <button type="button"
                             class="spintax-caption-btn px-3 py-2 d-block btn btn-active-light text-gray-700"
                             title="Auto spintax" data-toggle="tooltip" data-placement="top">
                             <i class="bi bi-braces icon-large p-0"></i>
                           </button>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                           <a href="https://app.whatsbot.org/ai_content_generator/popup/caption"
                             class="actionItem px-3 py-2 d-block btn btn-active-light text-gray-700"
                             data-popup="Ai_content_generatorModal" title="AI Content Generator" data-toggle="tooltip"
                             data-placement="top"><i class="icon icon-openai pe-0"></i></a>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                           <div class="dropdown dropdown-hide-arrow" data-dropdown-spacing="36">
                             <a href="javascript:void(0);"
                               class="dropdown-toggle px-3 py-2 d-block btn btn-active-light fs-12 h-35 d-flex align-items-center"
@@ -2360,7 +2361,7 @@
                               </a>
                             </div>
                           </div>
-                        </li>
+                        </li> -->
                       </ul>
                     </div>
                     <script type="text/javascript">
@@ -2494,9 +2495,10 @@
               </div>
               <div class="card-footer">
                 <div class="d-flex justify-content-end">
-                  <a class="btn btn-primary btn-hover-scale actionMultiItem"
+                  <a class="btn btn-success btn-hover-scale actionMultiItem"
                     href="https://app.whatsbot.org/whatsapp_autoresponder/save">
-                    <i class="fal fa-paper-plane"></i> حفظ </a>
+                    <!-- <i class="fal fa-paper-plane" ></i> -->
+                     حفظ </a>
                 </div>
               </div>
             </div>
