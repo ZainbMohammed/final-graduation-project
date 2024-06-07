@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 var cors = require('cors')
 require('dotenv').config();
+const cookieParser = require('cookie-parser');
 
 const dbConnection = require('./configDB/dbConnection');
 const usersRouter = require('./api/routers/users.routers');
@@ -10,10 +11,14 @@ const httpStatusText = require('./api/utils/httpStatusText');
 const app = express()
 
 //config the cors
-app.use(cors()); // to solve cors policy 'Cross Origin Resourse Sharing'
-
+ // to solve cors policy 'Cross Origin Resourse Sharing'
+app.use(cors({
+    origin: ['http://127.0.0.1:5501','http://localhost:5501'], // Replace with your front-end origin
+    credentials: true
+  }));
 //config the body-parser
 app.use(express.json());
+app.use(cookieParser());
 
 //config the routes
 app.use('/api/users',usersRouter);
