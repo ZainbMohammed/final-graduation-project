@@ -188,8 +188,8 @@ document.getElementById('signupForm').addEventListener('submit', async function 
             window.location.href = './login.html'; // Redirect to login page after successful registration
         } else {
             // Registration failed, handle error (e.g., display error message)
-            console.error('Registration failed:', responseData.error);
-            alert('Registration failed! Please try again.'); // Example: Show alert message
+            console.error('Registration failed:', responseData.Message);
+            alert(`Registration failed! ${responseData.Message} Please try again.`); // Example: Show alert message
         }
     } catch (error) {
         console.error('Error:', error);

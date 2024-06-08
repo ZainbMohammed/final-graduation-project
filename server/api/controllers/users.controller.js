@@ -34,7 +34,7 @@ const register = async(req,res)=>{
         const oldUser = await User.findOne({email:email});
 
         if(oldUser){
-            return res.status(400).json({status: httpStatusText.FAIL,Message: "User is alerady exit"});
+            return res.status(400).json({status: httpStatusText.FAIL,Message: "The user email is alerady exit"});
         }
 
         // password hashing
@@ -103,6 +103,7 @@ const updateUser = async (req,res)=>{
         return res.status(400).json({status: httpStatusText.ERROR, Message: error.Message});
     }
 }
+
 const logout = async (req, res) => {
     try {
         // Invalidate token logic if you maintain a token blacklist
@@ -113,7 +114,6 @@ const logout = async (req, res) => {
         return res.status(500).json({ status: httpStatusText.ERROR, Message: "Internal Server Error" });
     }
 };
-
 
 const foregetPassword = async (req, res) => {
     const { email } = req.body;
@@ -152,13 +152,6 @@ const foregetPassword = async (req, res) => {
                 If you did not request this, please ignore this email and your password will remain unchanged.\n`,
         };
 
-        // await transporter.sendMail(mailOptions,(error, info) => {
-        //     if (error) {
-        //         console.log('Error:', error);
-        //     } else {
-        //         console.log('Email sent:', info.response);
-        //     }
-        // });
         try {
             console.log('========= start send email function =======');
             await transporter.sendMail(mailOptions);
@@ -171,8 +164,6 @@ const foregetPassword = async (req, res) => {
 
         }
         
-        // console.log(process.env.EMAIL_PASS);
-        // console.log(process.env.EMAIL_USER);
     } catch (error) {
         console.error('Error in forgetPassword function:', error);
         res.status(500).json({ status: 'error', message: `Internal server error ${error}` });

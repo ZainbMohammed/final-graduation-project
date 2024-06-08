@@ -38,8 +38,8 @@
           <li><a class="nav-link scrollto" href="#">الأسئلة الشائعة</a></li>
           <li><a class="nav-link scrollto" href="#team">من نحن</a></li>
           <li><a class="nav-link scrollto" href="#contact">تواصل معنا</a></li>
-          <li><a class="getstarted scrollto" href="#">جرب الآن</a></li>
-          <li><a class="nav-link scrollto" href="#">تسجيل الدخول</a></li>
+          <li><a class="getstarted scrollto" href="./register.html">جرب الآن</a></li>
+          <li><a class="nav-link scrollto" href="./login.html">تسجيل الدخول</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -59,7 +59,7 @@
                        <form id="loginForm" action="/login" method="POST">
                         <div class="input-field">
                           <label for="email" class="form-label">ايميل</label>
-                          <input type="text" id="email" class="form-control">
+                          <input type="email" id="email" class="form-control">
                         </div> 
                         <div class="input-field">
                             <label for="password" class="form-label">كلمةالسر</label>
@@ -119,7 +119,7 @@
                 console.log('id => ',id);
                 localStorage.setItem('authToken', token);
                 localStorage.setItem('userId', id);
-                window.location.href = `http://127.0.0.1:5501/client/pages/profile.html?userId=${id}`;
+                window.location.href = `http://127.0.0.1:5501/client/pages/controlPanel.html?userId=${id}`;
             } else {
                 // Login failed, handle error (e.g., display error message)
                 console.log('Login failed:', responseData);

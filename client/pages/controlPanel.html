@@ -9,7 +9,7 @@
   <meta name="keywords" content="آبداء ببناء شات بوت واتساب احترافي الآن">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="https://app.whatsbot.org/writable/uploads/1703858200_3bc8933349988a7302e3.png">
-  
+
   <link href="https://app.whatsbot.org/inc/themes/backend/Stackmin/Assets/fonts/fontawesome/css/all.min.css"
     rel="stylesheet" type="text/css">
   <link href="https://app.whatsbot.org/inc/themes/backend/Stackmin/Assets/fonts/icomoon/icomoon.css" rel="stylesheet"
@@ -1731,7 +1731,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&family=Roboto:ital,wght@0,100;0,400;1,300&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
     rel="stylesheet">
-    <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect">
   <!-- Vendor CSS Files -->
   <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -1820,7 +1820,7 @@
       </ul>
     </nav><!-- End Icons Navigation -->
   </header><!-- End Header -->
-    <!-- <div class="container-fluid d-flex align-items-stretch justify-content-between h-100">
+  <!-- <div class="container-fluid d-flex align-items-stretch justify-content-between h-100">
       <div class="d-flex justify-content-between flex-lg-grow-1">
         <div class="d-flex align-items-stretch ms-1 ms-lg-3">
           <div class="d-flex align-items-stretch ms-2 ms-lg-3">
@@ -1911,7 +1911,7 @@
             <i class="bi bi-person"></i>
             <span>البروفايل</span>
           </a>
-        </li> 
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="./setupChatbot.html">
             <i class="bi bi-menu-button-wide"></i>
@@ -1943,10 +1943,10 @@
                     <div class="text-gray-100 p-25 flex-fill miw-220">
                       <div class="fw-6 text-gray-100 fs-16"><span class="d-inline-block text-over mw-210">مرحبا 🎉
                           خلود خالد </span></div>
-                      
+
                       <div class="fs-12">
                         تاريخ انتهاء الصلاحية: 12-06-2024 </div>
-                      <div class="fs-20 mt-3 fw-6 mb-2" >
+                      <div class="fs-20 mt-3 fw-6 mb-2">
                         مجاني &amp; تجربة
                       </div>
                       <a href="https://app.whatsbot.org/profile/index/plan"
@@ -1967,7 +1967,7 @@
                         <i class="bi bi-share-fill" style="color: #002bff;font-size: 2.5rem"></i>
                       </div>
                       <div class="fw-6 text-gray-800">
-                        إدارة الحساب  </div>
+                        إدارة الحساب </div>
                     </a>
                     <a href="https://app.whatsbot.org/file_manager"
                       class="d-block border b-r-15 p-20 miw-150 text-over-all bg-gray-100 me-4 text-center">
@@ -2141,9 +2141,9 @@
                       <div class="card-body">
                         <div class="fw-9 fs-40 text-success position-absolute t-25 r-25 opacity-20"><i
                             class="bi bi-send-fill"></i></div>
-                          
+
                         <div class="fs-14 text-gray-600">مرسل</div>
-                        
+
                         <div class="fw-9 fs-30 text-success d-flex"><span class="me-1">0</span> <span
                             class="fs-14 fw-4 d-flex align-items-center mt-2">رسائل</span></div>
                       </div>
@@ -2586,8 +2586,43 @@
         flixmateConnected: false,
       });
     })();</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      userId = urlParams.get('userId');
+      console.log('id ========> ', userId)
+      if (!userId) {
+        console.error('User ID not provided');
+        return;
+      }
+      try {
+        const response = await fetch(`http://localhost:3000/api/users/${userId}`, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
+            'Content-Type': 'application/json'
+          }
+        });
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const result = await response.json();
+        console.log('response==>', result);
+        if (result.status === 'success') {
+          const user = result.data.user;
+          console.log('user ===>', user);
+          document.getElementById('span-username').textContent = user.userName;
+        } else {
+          console.error('Error fetching user data:', result.message);
+        }
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    });
+  </script>
 </body>
-<div class="liner-mini-tooltip liner-disabled liner-page-text-only-tooltip" style="display: none;">
+<!-- <div class="liner-mini-tooltip liner-disabled liner-page-text-only-tooltip" style="display: none;">
   <div class="liner-page-tooltip-body-point"></div>
   <div class="liner-page-tooltip-body">
     <span>Select text only</span>
@@ -2635,6 +2670,6 @@
 <div class="L-ImagePromptBox"></div>
 <div class="liner-shadow-root">
   <div id="liner-shadow-root" style="font-family: system-ui;"></div>
-</div>
+</div> -->
 
 </html>
