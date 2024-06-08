@@ -13,7 +13,7 @@ const app = express()
 //config the cors
  // to solve cors policy 'Cross Origin Resourse Sharing'
 app.use(cors({
-    origin: ['http://127.0.0.1:5501','http://localhost:5501'], // Replace with your front-end origin
+    origin:'http://127.0.0.1:5501', // Replace with your front-end origin
     credentials: true
   }));
 //config the body-parser

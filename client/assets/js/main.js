@@ -1,6 +1,6 @@
 (function() {
   "use strict";
-  console.log('jo');
+  console.log('Hello World');
 
   // * Easy selector helper function
   const select = (el, all = false) => {
