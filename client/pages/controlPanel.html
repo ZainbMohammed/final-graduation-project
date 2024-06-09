@@ -1942,7 +1942,7 @@
                   <div class="card-body bg-gray-800 shadow b-r-15 d-flex p-0 justify-content-between">
                     <div class="text-gray-100 p-25 flex-fill miw-220">
                       <div class="fw-6 text-gray-100 fs-16"><span class="d-inline-block text-over mw-210">مرحبا 🎉
-                          خلود خالد </span></div>
+                          زينب محمد </span></div>
 
                       <div class="fs-12">
                         تاريخ انتهاء الصلاحية: 12-06-2024 </div>
@@ -2613,30 +2613,30 @@
           const user = result.data.user;
           console.log('user ===>', user);
           document.getElementById('span-username').textContent = user.userName;
-     
-          document.getElementById('profileLink').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent default link behavior (page reload)
-
-    const userId = localStorage.getItem('userId'); // Get the user ID from localStorage
-    if (userId) {
-      const profileUrl = `http://127.0.0.1:5501/client/pages/profile.html?userId=${userId}`;
-      window.location.href = profileUrl;
-    } else {
-      // Handle case where user ID is not available
-      console.error('User ID not found in localStorage.');
-      // You can show an alert or perform other actions here
-    }
-  });
-        } else {
+        }
+       else {
           console.error('Error fetching user data:', result.message);
         }
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
+      // document.getElementById('profileLink').addEventListener('click', function (event) {
+      //       event.preventDefault(); // Prevent default link behavior (page reload)
 
-  
+      //       const userId = localStorage.getItem('userId'); // Get the user ID from localStorage
+      //       if (userId) {
+      //         const profileUrl = `http://127.0.0.1:5501/client/pages/profile.html?userId=${userId}`;
+      //         window.location.href = profileUrl;
+      //       } else {
+      //         // Handle case where user ID is not available
+      //         console.error('User ID not found in localStorage.');
+      //         // You can show an alert or perform other actions here
+      //       }
+      //     });
+        
+
     });
-   
+
   </script>
 </body>
 <!-- <div class="liner-mini-tooltip liner-disabled liner-page-text-only-tooltip" style="display: none;">

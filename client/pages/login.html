@@ -119,7 +119,7 @@
                 console.log('id => ',id);
                 localStorage.setItem('authToken', token);
                 localStorage.setItem('userId', id);
-                window.location.href = `http://127.0.0.1:5501/client/pages/controlPanel.html?userId=${id}`;
+                window.location.href = `http://127.0.0.1:5501/client/pages/profile.html?userId=${id}`;
             } else {
                 // Login failed, handle error (e.g., display error message)
                 console.log('Login failed:', responseData);
