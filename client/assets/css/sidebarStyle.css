@@ -149,6 +149,6 @@ a.sidebar-link:hover {
 }
 
 .scrollable-section {
-    height: 100vh; 
+    height: 100hv; 
     overflow-y: auto; 
 }
