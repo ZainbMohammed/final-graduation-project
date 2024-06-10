@@ -57,9 +57,6 @@ h6 {
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
-/**
-* Desktop Navigation 
-*/
 .navbar {
   padding: 0;
 }
@@ -133,16 +130,6 @@ h6 {
 
 .mobile-nav-toggle.bi-x {
   color: #fff;
-}
-
-@media (max-width: 1200px) {
-  .mobile-nav-toggle {
-    display: block;
-  }
-
-  .navbar ul {
-    display: none;
-  }
 }
 
 .navbar-mobile {
