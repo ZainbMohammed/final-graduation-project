@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 
 const dbConnection = require('./configDB/dbConnection');
 const usersRouter = require('./api/routers/users.routers');
+const productsRouter = require('./api/routers/products.routers');
 const httpStatusText = require('./api/utils/httpStatusText');
 
 const app = express()
@@ -22,6 +23,8 @@ app.use(cookieParser());
 
 //config the routes
 app.use('/api/users',usersRouter);
+app.use('/api/products',productsRouter);
+
 
 // const url = 'mongodb://localhost:27017/musaedDB'
 // const port = 3000

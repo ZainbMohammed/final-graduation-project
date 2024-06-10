@@ -24,14 +24,14 @@ const getOnlyProduct = async (req,res)=>{
 const addNewProduct = async(req,res)=>{
 
     try{
-        const {user_id, name, price, busdescription ,offer} = req.body;
+        const {user_id, name, price, description ,offer} = req.body;
         // const oldProduct = await Product.findOne({email:email});
 
-        const newProduct = new User({
+        const newProduct = new Product({
             user_id,
             name,
             price,
-            busdescription,
+            description,
             offer
         });
         
