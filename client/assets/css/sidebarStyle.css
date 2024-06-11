@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&family=Roboto:ital,wght@0,100;0,400;1,300&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
 
 
-html, body {
+ html,body {
     overflow: hidden;
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 ::after,
@@ -148,7 +150,20 @@ a.sidebar-link:hover {
     transition: all .2s ease-out;
 }
 
-.scrollable-section {
-    height: 100hv; 
-    overflow-y: auto; 
+.ii {
+    max-height: 80%;/* Make sure scrollable section takes full height */
 }
+
+/* Adjustments to ensure main content takes remaining space */
+.wrapper .main {
+    margin-left: 70px; /* Adjust based on the initial sidebar width */
+    transition: margin-left .25s ease-in-out;
+}
+
+#sidebar.expand ~ .main {
+    margin-left: 260px; /* Adjust based on the expanded sidebar width */
+}
+.btn {
+    width: 20%;
+    padding: 5px;
+  }

@@ -16,7 +16,7 @@
 
   <!-- Template Main CSS File -->
   <link href="../assets/css/sidebarStyle.css" rel="stylesheet">
-  <link href="../assets/css/profileStyle.css" rel="stylesheet">
+  <link href="../assets/css/headerStyle.css" rel="stylesheet">
   <!-- bootstrab -->
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
@@ -125,7 +125,7 @@
         </ul>
       </aside>
       <div class="main p-3 ">
-        <div class="card scrollable-section">
+        <div class="card  overflow-auto ii">
           <div class="card-header">
             <h4 class="card-title text-success p-1">تفعيل رد آلي مدعم بال AI </h4>
           </div>
@@ -182,37 +182,35 @@
                 </div>
               </div>
               <div class="col-md-6 col-lg-4">
-               <div class="card shadow p-3">
-                <h4 class="card-title text-success p-2" >المنتجات</h4>
-                <div class="form-group">
-                  <label for="productName" class="p-2">اسم المنتج</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="productName"/>
+                <div class="card shadow p-3">
+                    <h4 class="card-title text-success p-2">المنتجات</h4>
+                    <form id="productForm">
+                        <div class="form-group">
+                            <label for="productName" class="p-2">اسم المنتج</label>
+                            <input type="text" class="form-control" id="productName" required />
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="productPrice" class="p-2">سعر المنتج</label>
+                            <input type="text" class="form-control" id="productPrice" required />
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="productDescription" class="p-2">وصف المنتج</label>
+                            <input type="text" class="form-control" id="productDescription" required />
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="productDiscount" class="p-2">الخصم</label>
+                            <input type="text" class="form-control" id="productDiscount" required />
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success text-center p-2 mt-4">اظافة</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group mt-3">
-                  <label for="productPrice"class="p-2">سعر المنتج</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="productPrice"/>
-                </div>
-                <div class="form-group mt-3">
-                  <label for="productDescription"class="p-2">وصف المنتج</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="productDescription"/>
-                </div>
-                <div class="form-group mt-3">
-                  <label for="productDiscount"class="p-2">الخصم</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="productDiscount"/>
-                </div>
-               </div>
+            </div>
+            
+            
+              <div class="text-center">
+                <button id="save" type="button" class="btn btn-success text-center mt-4">حفظ</button>
               </div>
             </div>
           </div>
@@ -241,7 +239,7 @@
           productDiscount: document.getElementById('productDiscount')
         };
 
-        document.querySelector('form').addEventListener('submit', function(event) {
+        document.getElementById('save').addEventListener('click', function(event) {
           event.preventDefault();
 
           const formValues = {
@@ -260,6 +258,58 @@
           console.log(formValues);
         });
       });
+      document.getElementById('productForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const url = 'http://localhost:3000/api/products/';
+    const userId = '666545bc9f63840647a8ba3d'; // Assuming user_id is static or retrieved from somewhere
+
+    const name = document.getElementById('productName').value.trim();
+    const price = document.getElementById('productPrice').value.trim();
+    const description = document.getElementById('productDescription').value.trim();
+    const offer = document.getElementById('productDiscount').value.trim();
+
+    // Validate inputs
+    if (!name || !price || !description || !offer) {
+        alert('Please fill out all fields.');
+        return;
+    }
+
+    const data = {
+        user_id: userId,
+        name,
+        price,
+        description,
+        offer
+    };
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        console.log('Response:', result);
+
+        if (response.ok) {
+            // Optionally handle success (e.g., show a success message, reset the form)
+            alert('Product added successfully!');
+            document.getElementById('productForm').reset();
+        } else {
+            // Optionally handle error response from server
+            alert('Error: ' + result.Message);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        // Optionally handle error (e.g., show an error message)
+        alert('An error occurred while adding the product.');
+    }
+});
+
     </script>
   </body>
 </html>

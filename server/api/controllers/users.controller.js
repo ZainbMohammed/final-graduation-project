@@ -1,6 +1,5 @@
 const User = require('../modules/users.module');
 const bcrypt = require("bcryptjs")
-// const jwt = require('jsonwebtoken');
 const httpStatusText = require('../utils/httpStatusText')
 const generateJWT = require('../utils/generateJWT');
 const nodemailer = require('nodemailer');

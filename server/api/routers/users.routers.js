@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const userControllers = require('../controllers/users.controller');
-const verifyToken = require('../moddlewares/verifyToken');
+// const verifyToken = require('../moddlewares/verifyToken');
+const {validationSchema} = require('../moddlewares/uservalisationSchemea')
+
 
 // get all users
 router.route('/')
@@ -10,7 +12,7 @@ router.route('/')
   
 // register 
 router.route('/register')
-        .post(userControllers.register)
+        .post(validationSchema(),userControllers.register)
 
 // login
 router.route('/login')
