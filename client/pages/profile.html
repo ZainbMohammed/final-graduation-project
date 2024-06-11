@@ -7,67 +7,52 @@
   <title>مساعد</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
-  <!-- Favicons -->
   <link href="../assets/img/Vector.png" rel="icon">
-
-  <!-- Google Fonts -->
-  <!-- <link
-    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&family=Roboto:ital,wght@0,100;0,400;1,300&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
-    rel="stylesheet"> -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-
-  <!-- Vendor CSS Files -->
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
-
-  <!-- Template Main CSS File -->
-  <link href="../assets/css/profileStyle.css" rel="stylesheet">
+  <link href="../assets/css/headerStyle.css" rel="stylesheet">
   <link href="../assets/css/sidebarStyle.css" rel="stylesheet">
-
-  <!-- Template Main JS File -->
+  <link href="../assets/css/profileStyle.css" rel="stylesheet">
   <script src="../assets/js/main.js"></script>
 </head>
 
 <body>
-  <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="../assets/img/logo.png">
-        <!-- <span class="d-none d-lg-block">Bot</span> -->
       </a>
-      <!-- <i class="bi bi-list toggle-sidebar-btn"></i> -->
-    </div><!-- End Logo -->
+    </div>
     <div class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">
         <input type="text" name="query" placeholder="بحث" title="ماذا تريد ان تبحث ؟">
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
-    </div><!-- End Search Bar -->
+    </div>
     <nav class="header-nav">
       <ul class="d-flex align-items-center">
         <li class="nav-item d-block d-lg-none">
           <a class="nav-link nav-icon search-bar-toggle " href="#">
             <i class="bi bi-search"></i>
           </a>
-        </li><!-- End Search Icon-->
+        </li>
         <li class="nav-item d-flex">
           <a class="nav-link nav-icon" href="#">
             <i class="bi bi-bell"></i>
             <span class="badge  badge-number">4</span>
-          </a><!-- End Notification Icon -->
+          </a>
           <a class="nav-link nav-icon" href="#">
             <i class="bi bi-chat-right-text"></i>
             <span class="badge badge-number">2</span>
-          </a><!-- End Messages Icon -->
-        </li><!-- End Notification Nav -->
+          </a>
+        </li>
         <li class="nav-itdropdown pe-3em ">
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <span id="span-username" class="d-none d-md-block dropdown-toggle ps-2">اسم المستخدم</span>
             <img src="../assets/img/register/register.png" alt="Profile" class="rounded-circle">
-          </a><!-- End Profile Iamge Icon -->
+          </a>
           <ul class="dropdown-menu  dropdown-menu-arrow profile">
             <li class="dropdown-header">
               <h6>اسم الأستخدام</h6>
@@ -86,13 +71,11 @@
                 <span>تسجيل خروج</span>
               </a>
             </li>
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
+          </ul>
+        </li>
       </ul>
-    </nav><!-- End Icons Navigation -->
-  </header><!-- End Header -->
-  <!-- ======= Sidebar ======= -->
-  
+    </nav>
+  </header>
   <div class="mt-5 pt-3">
     <div class="wrapper">
       <aside id="sidebar">
@@ -104,7 +87,7 @@
             <a href="#" class="text-success">مرحبا بعودتك</a>
           </div>
         </div>
-        <ul class="sidebar-nav"> 
+        <ul class="sidebar-nav">
           <li class="sidebar-item">
             <a href="./profile.html" class="sidebar-link">
               <i class="bi bi-person"></i>
@@ -135,20 +118,19 @@
               <span class="p-2">التقارير</span>
             </a>
           </li>
-          <br><br><br><br>
-          <a href="#" class="sidebar-link mt-5">
+          <br><br><br>
+          <a href="./login.html" class="sidebar-link mt-5" id="logoutButton">
             <i class="lni lni-exit"></i>
             <span>تسجيل الخروج</span>
           </a>
         </ul>
       </aside>
-      <div id="main" class="main ">
+      <div id="main" class="main">
         <section class="section profile">
-           <div class="col-md-6 col-lg-12">
+          <div class="col-md-6 col-lg-12">
             <div class="row">
               <div class="card">
                 <div class="card-body pt-2">
-                  <!-- Bordered Tabs -->
                   <ul class="nav nav-tabs nav-tabs-bordered">
                     <li class="nav-item">
                       <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">معلومات
@@ -197,300 +179,149 @@
                       </div>
                     </div>
                     <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
-                      <!-- Profile Edit Form -->
                       <form>
                         <div class="row mb-3">
-                          <label for="fullName" class="col-md-4 col-lg-3 col-form-label">اسم المستخدم</label>
-                          <div class="col-md-8 col-lg-7">
-                            <input name="fullName" type="text" class="form-control" id="f-username" value="زينب محمد">
+                          <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">الصورة الشخصية</label>
+                          <div class="col-md-8 col-lg-9">
+                            <img src="../assets/img/register/register.png" alt="Profile">
+                            <div class="pt-2">
+                              <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i
+                                  class="bi bi-upload"></i></a>
+                              <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i
+                                  class="bi bi-trash"></i></a>
+                            </div>
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label for="email" class="col-md-4 col-lg-3 col-form-label">الايميل</label>
-                          <div class="col-md-8 col-lg-7">
-                            <input name="email" type="email" class="form-control" id="f-email" value="zainb@gmail.com">
+                          <label for="fullName" class="col-md-4 col-lg-3 col-form-label">اسم المتسخدم</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="username" type="text" class="form-control" id="fullName"
+                              value="زينب محمد">
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label for="storeName" class="col-md-4 col-lg-3 col-form-label">اسم المتجر</label>
-                          <div class="col-md-8 col-lg-7">
-                            <input name="storeName" type="text" class="form-control" id="f-storeName" value="فلور ستور">
+                          <label for="about" class="col-md-4 col-lg-3 col-form-label">الايميل</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="email" type="email" class="form-control" id="email"
+                              value="zainab.mohammed@example.com">
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label for="storeEmail" class="col-md-4 col-lg-3 col-form-label">ايميل المتجر</label>
-                          <div class="col-md-8 col-lg-7">
-                            <input name="storeEmail" type="email" class="form-control" id="f-storeEmail"
+                          <label for="about" class="col-md-4 col-lg-3 col-form-label">كلمة المرور</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="password" type="password" class="form-control" id="password"
+                              value="2a$10$orEy.1BajEwUe3P8hl/o1euoJU61V6VIHWNFFEMV1gimRBLm95dau">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="about" class="col-md-4 col-lg-3 col-form-label">اسم المتجر</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="storeName" type="text" class="form-control" id="storeName"
+                              value="فلور ستور">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="about" class="col-md-4 col-lg-3 col-form-label">ايميل المتجر</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="storeEmail" type="email" class="form-control" id="storeEmail"
                               value="fShop@gmail.com">
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label for="storeIndustry" class="col-md-4 col-lg-3 col-form-label">رقم المتجر</label>
-                          <div class="col-md-8 col-lg-7">
-                            <input name="storeIndustry" type="text" class="form-control" id="f-storeIndustry"
+                          <label for="about" class="col-md-4 col-lg-3 col-form-label">رقم المتجر</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="storePhone" type="text" class="form-control" id="storePhone"
                               value="307687 05">
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label for="storePhone" class="col-md-4 col-lg-3 col-form-label">رقم المتجر</label>
-                          <div class="col-md-8 col-lg-7">
-                            <input name="storePhone" type="text" class="form-control" id="f-storePhone" value="307687 05">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="Country" class="col-md-4 col-lg-3 col-form-label">الدولة</label>
-                          <div class="col-md-8 col-lg-7">
-                            <input name="country" type="text" class="form-control" id="f-country" value="اليمن">
+                          <label for="about" class="col-md-4 col-lg-3 col-form-label">الدولة</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="Country" type="text" class="form-control" id="Country"
+                              value="اليمن">
                           </div>
                         </div>
                         <div class="text-center">
-                          <button type="submit" class="btn save mb-3" id="save-button">حفظ</button>
+                          <button type="submit" class="btn btn-primary">حفظ التعديلات</button>
                         </div>
-                      </form><!-- End Profile Edit Form -->
+                      </form>
                     </div>
                     <div class="tab-pane fade pt-3" id="profile-change-password">
-                      <!-- Change Password Form -->
-                      <form id="changePasswordForm">
+                      <form>
                         <div class="row mb-3">
-                          <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">كلمة المرور الحالية</label>
-                          <div class="col-md-8 col-lg-7">
-                            <input name="currentPassword" type="password" class="form-control" id="currentPassword"
-                              required>
+                          <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">كلمة المرور
+                            الحالية</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="password" type="password" class="form-control" id="currentPassword">
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">كلمة المرور الجديدة</label>
-                          <div class="col-md-8 col-lg-7">
-                            <input name="newpassword" type="password" class="form-control" id="newPassword" required>
-                            <!-- <small id="passwordHelpBlock" class="form-text text-muted">
-                              يجب أن تكون كلمة السر الجديدة على الأقل 8 أحرف، تتضمن حرف كبير، حرف صغير، رقم ورمز خاص.
-                            </small> -->
+                          <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">كلمة المرور
+                            الجديدة</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="newpassword" type="password" class="form-control" id="newPassword">
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label for="confirmPassword" class="col-md-4 col-lg-3 col-form-label">تأكيد كلمة المرور</label>
-                          <div class="col-md-8 col-lg-7">
-                            <input name="confirmPassword" type="password" class="form-control" id="confirmPassword"
-                              required>
+                          <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">اعد ادخال كلمة
+                            المرور الجديدة</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input name="renewpassword" type="password" class="form-control" id="renewPassword">
                           </div>
                         </div>
                         <div class="text-center">
-                          <button type="submit" class="btn save">حفظ</button>
-                          <div id="passwordChangeFeedback" class="pt-2"></div>
+                          <button type="submit" class="btn btn-primary">تحديث كلمة المرور</button>
                         </div>
-                      </form><!-- End Change Password Form -->
+                      </form>
                     </div>
-                  </div><!-- End Bordered Tabs -->
+                  </div>
                 </div>
               </div>
             </div>
-           </div>
+          </div>
         </section>
       </div>
     </div>
+  </div>
+
+  <!-- Toast Notification Section -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="success-toast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          تم الحفظ بنجاح
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
     </div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-        class="bi bi-arrow-up-short"></i></a>
-    <!-- Vendor JS Files -->
-    <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="../assets/vendor/aos/aos.js"></script>
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="../assets/vendor/php-email-form/validate.js"></script>
+    <div id="error-toast" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          حدث خطأ أثناء الحفظ
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
 
-    <!-- Template Main JS File -->
-    <script src="../assets/js/main.js"></script>
-    <script>
-      const hamBurger = document.querySelector(".toggle-btn");
-      hamBurger.addEventListener("click", function () {
-        document.querySelector("#sidebar").classList.toggle("expand");
-      });
-    </script>
-    <script>
-      let userId;
-      document.addEventListener('DOMContentLoaded', async () => {
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        userId = urlParams.get('userId');
-        console.log('id ========> ', userId)
-        if (!userId) {
-          console.error('User ID not provided');
-          return;
-        }
-        try {
-          const response = await fetch(`http://localhost:3000/api/users/${userId}`, {
-            method: 'GET',
-            headers: {
-              'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
-              'Content-Type': 'application/json'
-            }
-          });
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          const result = await response.json();
-          console.log('response==>', result);
-          if (result.status === 'success') {
-            const user = result.data.user;
-            console.log('user ===>', user);
-            document.getElementById('span-username').textContent = user.userName;
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Mock save profile action
+    document.querySelector('.profile-edit form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Show success toast
+      let successToast = new bootstrap.Toast(document.getElementById('success-toast'));
+      successToast.show();
+    });
 
-            document.getElementById('username').textContent = user.userName;
-            document.getElementById('email').textContent = user.email;
-            document.getElementById('password').textContent = user.password;
-            // Update more fields as necessary
-            document.getElementById('storeName').textContent = user.businessInfo.name;
-            document.getElementById('storeEmail').textContent = user.businessInfo.email;
-            document.getElementById('storePhone').textContent = user.businessInfo.phone;
-            document.getElementById('Country').textContent = user.businessInfo.country;
-
-            document.getElementById('f-username').value = user.userName || '';
-            document.getElementById('f-email').value = user.email || '';
-            document.getElementById('f-storeName').value = user.businessInfo.name || '';
-            document.getElementById('f-storeEmail').value = user.businessInfo.email || '';
-            document.getElementById('f-storeIndustry').value = user.businessInfo.industry || '';
-            document.getElementById('f-storePhone').value = user.businessInfo.phone || '';
-            document.getElementById('f-country').value = user.businessInfo.country || '';
-          } else {
-            console.error('Error fetching user data:', result.message);
-          }
-        } catch (error) {
-          console.error('Error fetching user data:', error);
-        }
-
-
-
-
-        // async function fetchUserData(userId) {
-
-        // }
-        // const saveButton = document.getElementById('save-button');
-
-        document.getElementById('save-button').addEventListener('click', async () => {
-          // const userId = new URLSearchParams(window.location.search).get('userId');
-
-          event.preventDefault();
-          const updatedData = {
-            userName: document.getElementById('f-username').value,
-            email: document.getElementById('f-email').value,
-            // password: document.getElementById('f-password').value, // Ensure you have an input for password if needed
-            businessInfo: {
-              name: document.getElementById('f-storeName').value,
-              email: document.getElementById('f-storeEmail').value,
-              industry: document.getElementById('f-storeIndustry').value, // Ensure you have an input for industry
-              phone: document.getElementById('f-storePhone').value,
-              country: document.getElementById('f-country').value
-            }
-          };
-          console.log(updatedData);
-          try {
-            const response = await fetch(`http://localhost:3000/api/users/${userId}`, {
-              method: 'PATCH',
-              headers: {
-                'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(updatedData)
-            });
-            console.log('response==> ', response);
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const result = await response.json();
-            console.log('result==> ', response);
-
-            if (result.status === 'success') {
-              alert('Profile updated successfully!');
-              // Update the displayed data if needed
-              document.getElementById('username').textContent = updatedData.userName;
-              document.getElementById('email').textContent = updatedData.email;
-              document.getElementById('storeName').textContent = updatedData.businessInfo.name;
-              document.getElementById('storeEmail').textContent = updatedData.businessInfo.email;
-              document.getElementById('storePhone').textContent = updatedData.businessInfo.phone;
-              document.getElementById('Country').textContent = updatedData.businessInfo.country;
-            } else {
-              console.error('Error updating user data:', result.message);
-              alert('Failed to update profile. Please try again.');
-            }
-          } catch (error) {
-            console.error('Error updating user data:', error);
-            alert('An error occurred. Please try again.');
-          }
-        });
-
-        document.getElementById('logoutButton').addEventListener('click', async function () {
-          console.log(localStorage.getItem('authToken'));
-          try {
-            // Assuming your backend has a logout endpoint
-            const response = await fetch('http://localhost:3000/api/users/logout', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('authToken')}`
-              }
-            });
-
-            if (response.ok) {
-              // Clear authentication data
-              localStorage.removeItem('authToken');
-              localStorage.removeItem('userId');
-
-              // Display success message
-              console.log('Logout successful! Redirecting to login page...');
-
-              // Redirect to login page after a short delay
-              setTimeout(() => {
-                window.location.href = 'login.html';
-              }, 10000);
-            } else {
-              console.error('Logout failed. Please try again.');
-            }
-          } catch (error) {
-            console.error('An error occurred. Please try again later.');
-          }
-        });
-
-        document.getElementById("changePasswordForm").addEventListener("submit", function (event) {
-          event.preventDefault();
-          const currentPassword = document.getElementById("currentPassword").value;
-          const newPassword = document.getElementById("newPassword").value;
-          const confirmPassword = document.getElementById("confirmPassword").value;
-
-          // Basic validation
-          if (!currentPassword || !newPassword || !confirmPassword) {
-            displayPasswordChangeFeedback("All fields are required.", "error");
-            return;
-          }
-
-          if (newPassword !== confirmPassword) {
-            displayPasswordChangeFeedback("The new passwords do not match.", "error");
-            return;
-          }
-          // Check password strength
-          const passwordStrengthPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
-          if (!passwordStrengthPattern.test(newPassword)) {
-            displayPasswordChangeFeedback("The new password does not meet the required criteria.", "error");
-            return;
-          }
-          // Simulate password change submission
-          setTimeout(() => {
-            displayPasswordChangeFeedback("Password changed successfully!", "success");
-          }, 1000);
-
-
-        });
-
-        // Function to display feedback messages for password change
-        function displayPasswordChangeFeedback(message, type) {
-          const feedbackElement = document.getElementById("passwordChangeFeedback");
-          feedbackElement.innerText = message;
-          feedbackElement.className = type === "success" ? "text-success" : "text-danger";
-        }
-      });
-    </script>
+    // Mock change password action
+    document.querySelector('#profile-change-password form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Show error toast
+      let errorToast = new bootstrap.Toast(document.getElementById('error-toast'));
+      errorToast.show();
+    });
+  </script>
 </body>
 
 </html>

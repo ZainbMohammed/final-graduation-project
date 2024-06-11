@@ -117,7 +117,7 @@
               <span class="p-2">التقارير</span>
             </a>
           </li>
-          <br><br><br><br>
+          <br><br><br>
           <a href="#" class="sidebar-link mt-5">
             <i class="lni lni-exit"></i>
             <span>تسجيل الخروج</span>
@@ -262,7 +262,7 @@
     event.preventDefault();
 
     const url = 'http://localhost:3000/api/products/';
-    const userId = '666545bc9f63840647a8ba3d'; // Assuming user_id is static or retrieved from somewhere
+    const userId = localStorage.getItem(userId);
 
     const name = document.getElementById('productName').value.trim();
     const price = document.getElementById('productPrice').value.trim();
